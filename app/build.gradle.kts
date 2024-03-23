@@ -40,6 +40,7 @@ android {
   buildFeatures {
     dataBinding = true
     buildConfig = true
+    compose = true
   }
 
   hilt {
@@ -70,6 +71,10 @@ android {
       signingConfig = getByName("debug").signingConfig
       matchingFallbacks += listOf("release")
     }
+  }
+
+  composeOptions {
+    kotlinCompilerExtensionVersion = "1.5.10"
   }
 }
 
@@ -136,6 +141,27 @@ dependencies {
   implementation(libs.rainbow)
   implementation(libs.androidRibbon)
   implementation(libs.progressView)
+
+  // compose
+  implementation(platform(libs.androidx.compose.bom))
+  implementation(libs.androidx.activity.compose)
+  implementation(libs.androidx.ui)
+  implementation(libs.androidx.ui.graphics)
+  implementation(libs.androidx.ui.tooling)
+  implementation(libs.androidx.ui.tooling.preview)
+  implementation(libs.androidx.material3)
+  implementation(libs.androidx.ui.test.junit4)
+  implementation(libs.androidx.ui.test.manifest)
+
+  // navigation
+  implementation(libs.navigation.compose)
+  implementation(libs.navigation.hilt.compose)
+
+  // image loading
+  implementation(libs.landscapist.coil)
+  implementation(libs.landscapist.animation)
+  implementation(libs.landscapist.placeholder)
+  implementation(libs.landscapist.palette)
 
   // unit test
   testImplementation(libs.junit)

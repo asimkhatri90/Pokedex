@@ -2,7 +2,7 @@
 targetSdk = "34"
 jvmBytecode = "17"
 agp = "8.3.1"
-kotlin = "1.9.23"
+kotlin = "1.9.22"
 ksp = "1.9.23-1.0.19"
 jvmTarget = "17"
 material = "1.11.0"
@@ -44,6 +44,14 @@ espresso = "3.5.1"
 mockito = "5.11.0"
 mockito-kotlin = "5.2.1"
 spotless = "6.25.0"
+lifecycleRuntimeKtx = "2.7.0"
+activityCompose = "1.8.2"
+composeBom = "2023.08.00"
+navigationCompose = "2.5.0"
+navigatoinHiltCompose = "1.0.0"
+landscapistVersion = "2.2.0"
+coreKtx = "1.12.0"
+appcompat = "1.6.1"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -93,6 +101,19 @@ rainbow = { module = "com.github.skydoves:rainbow", version.ref = "rainbow" }
 androidRibbon = { module = "com.github.skydoves:androidribbon", version.ref = "androidRibbon" }
 progressView = { module = "com.github.skydoves:progressview", version.ref = "progressView" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+navigation-compose = {group = "androidx.navigation", name="navigation-compose", version.ref = "navigationCompose"}
+navigation-hilt-compose = {group = "androidx.hilt", name ="hilt-navigation-compose", version.ref = "navigatoinHiltCompose"}
+landscapist-coil = {module = "com.github.skydoves:landscapist-coil", version.ref="landscapistVersion"}
+landscapist-animation = {module = "com.github.skydoves:landscapist-animation", version.ref="landscapistVersion"}
+landscapist-placeholder = {module = "com.github.skydoves:landscapist-placeholder", version.ref="landscapistVersion"}
+landscapist-palette = {module = "com.github.skydoves:landscapist-palette", version.ref="landscapistVersion"}
 
 # unit test
 junit = { module = "junit:junit", version.ref = "junit" }
@@ -105,3 +126,7 @@ android-test-runner = { module = "com.android.support.test:runner", version.ref 
 profileinstaller = { module = "androidx.profileinstaller:profileinstaller", version.ref = "baselineProfiles" }
 macrobenchmark = { module = "androidx.benchmark:benchmark-macro-junit4", version.ref = "macroBenchmark" }
 uiautomator = { module = "androidx.test.uiautomator:uiautomator", version.ref = "uiAutomator" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
