@@ -47,10 +47,7 @@ import com.skydoves.pokedex.compose.theme.primary
 import com.skydoves.pokedex.core.model.Pokemon
 
 @Composable
-fun PokemonList(
-  viewModel: PokemonViewModel,
-  pokemonSelected: (Pokemon) -> Unit,
-) {
+fun PokemonList(viewModel: PokemonViewModel, pokemonSelected: (Pokemon) -> Unit) {
   val pokemonList: List<Pokemon> by viewModel.pokemonListFlow.collectAsState(initial = emptyList())
   val isLoading: Boolean by viewModel.isLoading
   val toastMessage: String? by viewModel.toastMessage
@@ -95,7 +92,7 @@ fun PokemonList(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
       ) {
-        CircularProgressIndicator(modifier = modifier.width(32.dp))
+        CircularProgressIndicator(modifier = modifier.width(64.dp), color = MaterialTheme.colorScheme.primary)
       }
     }
   }
@@ -107,10 +104,10 @@ fun PokemonAppBar() {
   TopAppBar(
     title = { Text(text = "PokeDex") },
     colors =
-      TopAppBarDefaults.topAppBarColors(
-        containerColor = primary,
-        titleContentColor = Color.White,
-      ),
+    TopAppBarDefaults.topAppBarColors(
+      containerColor = primary,
+      titleContentColor = Color.White,
+    ),
   )
 }
 
@@ -127,10 +124,10 @@ fun PokemonItem(
 
   Surface(
     modifier =
-      modifier
-        .fillMaxWidth()
-        .padding(5.dp)
-        .clickable(onClick = { selectPokemon(pokemon) }),
+    modifier
+      .fillMaxWidth()
+      .padding(5.dp)
+      .clickable(onClick = { selectPokemon(pokemon) }),
     color = cardBackground,
     shape = RoundedCornerShape(16.dp),
     tonalElevation = 4.dp,
@@ -144,11 +141,11 @@ fun PokemonItem(
         imageModel = { pokemon.getImageUrl() },
         imageOptions = ImageOptions(contentScale = ContentScale.Crop),
         component =
-          rememberImageComponent {
-            +PalettePlugin {
-              imagePalette.value = it
-            }
-          },
+        rememberImageComponent {
+          +PalettePlugin {
+            imagePalette.value = it
+          }
+        },
       )
       Text(
         pokemon.name,

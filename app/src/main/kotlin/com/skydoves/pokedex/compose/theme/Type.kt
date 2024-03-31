@@ -8,6 +8,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 val DarkTypography = Typography (
+  displaySmall = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Bold,
+    color = Color.White,
+    fontSize = 36.sp
+  ),
   headlineLarge = TextStyle(
     fontFamily = FontFamily.Default,
     fontWeight = FontWeight.Bold,
@@ -32,16 +38,34 @@ val DarkTypography = Typography (
     color = white87,
     fontSize = 14.sp
   ),
+  titleLarge = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Bold,
+    color = Color.White,
+    fontSize = 22.sp
+  ),
   titleMedium = TextStyle(
     fontFamily = FontFamily.Default,
     fontWeight = FontWeight.Bold,
     color = Color.White,
     fontSize = 16.sp
-  )
+  ),
+  titleSmall = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Normal,
+    color = white_56,
+    fontSize = 14.sp
+  ),
 )
 
 
 val LightTypography = Typography(
+  displaySmall = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Bold,
+    color = background_900,
+    fontSize = 36.sp
+  ),
   headlineLarge = TextStyle(
     fontFamily = FontFamily.Default,
     fontWeight = FontWeight.Bold,
@@ -66,11 +90,23 @@ val LightTypography = Typography(
     color = background_800,
     fontSize = 14.sp
   ),
+  titleLarge = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Bold,
+    color = background_800,
+    fontSize = 22.sp
+  ),
   titleMedium = TextStyle(
     fontFamily = FontFamily.Default,
     fontWeight = FontWeight.Bold,
     color = background_800,
     fontSize = 16.sp
-  )
+  ),
+  titleSmall = TextStyle(
+    fontFamily = FontFamily.Default,
+    fontWeight = FontWeight.Normal,
+    color = white_56,
+    fontSize = 14.sp
+  ),
 )
 

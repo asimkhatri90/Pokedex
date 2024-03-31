@@ -152,6 +152,7 @@ dependencies {
   implementation(libs.androidx.material3)
   implementation(libs.androidx.ui.test.junit4)
   implementation(libs.androidx.ui.test.manifest)
+  implementation(libs.constraintlayout.compose)
 
   // navigation
   implementation(libs.navigation.compose)
@@ -162,6 +163,9 @@ dependencies {
   implementation(libs.landscapist.animation)
   implementation(libs.landscapist.placeholder)
   implementation(libs.landscapist.palette)
+
+  // gson
+  implementation(libs.gson)
 
   // unit test
   testImplementation(libs.junit)

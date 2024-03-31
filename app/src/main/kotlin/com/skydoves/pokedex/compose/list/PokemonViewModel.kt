@@ -12,33 +12,31 @@ import kotlinx.coroutines.flow.flatMapLatest
 import javax.inject.Inject
 
 @HiltViewModel
-class PokemonViewModel
-  @Inject
-  constructor(
-    val repository: MainRepository,
-  ) : ViewModel() {
-    private var _isLoading = mutableStateOf(false)
-    val isLoading: State<Boolean> get() = _isLoading
+class PokemonViewModel @Inject constructor(
+  private val repository: MainRepository,
+) : ViewModel() {
 
-    private var _toastMessage: MutableState<String?> = mutableStateOf(null)
-    val toastMessage: State<String?> get() = _toastMessage
+  private var _isLoading = mutableStateOf(false)
+  val isLoading: State<Boolean> get() = _isLoading
 
-    private val pokemonFetchingIndex: MutableStateFlow<Int> = MutableStateFlow(0)
-    val pokemonListFlow =
-      pokemonFetchingIndex.flatMapLatest { page ->
-        repository.fetchPokemonList(page, {
-          _isLoading.value = true
-        }, {
-          _isLoading.value = false
-        }, { error ->
-          _toastMessage.value = error
-        })
-      }
+  private var _toastMessage: MutableState<String?> = mutableStateOf(null)
+  val toastMessage: State<String?> get() = _toastMessage
 
-
-
-    @MainThread
-    fun fetchNextPokemonList() {
-      if (!_isLoading.value) pokemonFetchingIndex.value++
+  private val pokemonFetchingIndex: MutableStateFlow<Int> = MutableStateFlow(0)
+  val pokemonListFlow =
+    pokemonFetchingIndex.flatMapLatest { page ->
+      repository.fetchPokemonList(page, {
+        _isLoading.value = true
+      }, {
+        _isLoading.value = false
+      }, { error ->
+        _toastMessage.value = error
+      })
     }
+
+
+  @MainThread
+  fun fetchNextPokemonList() {
+    if (!_isLoading.value) pokemonFetchingIndex.value++
   }
+}
